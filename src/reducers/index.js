@@ -1,10 +1,10 @@
 import {createStore, combineReducers} from 'redux'
 import {dateReducer} from './date.reducers'
 
-// combina tutti i reducer che sono stati creati dal programmatore
+// it combines all the "reducers" that have been created by the programmer
 const rootReducer = combineReducers({
   date: dateReducer
 })
 
-// data la combinazione dei reducer crea uno store
+// given the combination of "reducers" it creates a store
 export const store = createStore(rootReducer)
