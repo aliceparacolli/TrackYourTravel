@@ -12,12 +12,12 @@ import { Instagram } from '../components/Instagram.jsx';
 
 export function Trip(){
 
-  // richiede il parametro tripId contenuto nell'url
-  // quindi se l'url finisce con trip/3
-  // allora tripId = 3
+  // it requires the parameter tripId contained in the URL
+  // So if the URL ends with trip/3 :
+  // tripId = 3
   const {tripId} = useParams()
 
-  // chiedo dammi quel viaggio con id tripID
+  // It asks for the travel with id = tripID 
   const {data} = getTrip({
     variables: {
       id: tripId
@@ -25,7 +25,7 @@ export function Trip(){
   })
 
   if(data) {
-    //se il viaggio esiste allora mostra la dashboard
+    //If the travel exists, the dashboard is shown 
     return (
       <>
         <Header/>
@@ -44,7 +44,7 @@ export function Trip(){
       </>
     );
   } else {
-    // altrimenti reindirizzami a notFound
+    // otherwise it redirects to notFound
     return <Redirect to="/notFound"/>
   }
   
