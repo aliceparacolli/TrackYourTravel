@@ -17,16 +17,15 @@ export function Recap (){
   //SUBSCRIBE
   const date = useSelector((state) => state.date)
   const {tripId} = useParams();
-  // dispatch crea un dispatcher che quando viene chiamato aggiorna lo stato globale memorizzato in redux
-  // NOTA BENE: quando viene aggiornato uno stato redux tramite dispatch allora vengono re-renderizzati tutti i compomenenit
-  // che hanno fatto il subscribe cioé che ne richiedono il valore usando useSelector
+  // dispatch creates a dispatcher and when it is called it updates the global state memorised  in redux
+  // When a redux state is updated through dispatch all the components who subscribed
+  //(requiring its value using useSelector)are re-rendered 
   const dispatch = useDispatch()
 
   function updateDate(value){
-    // crea la data da passare al dispatcher in base a quelle selezionata nell'input
-    // value è una stringa che rappresenta la data selezionata
-    // e la stringa viene convertita in data usando la funzione moment
-    // che una libreria esterna
+    // It creates the date to give to the dispatcher depending on what it is selected on the imput
+    // value is a string that represent the selected date
+    // and the string is converted to a date by usinf the function moment (external library)
     const m = moment(value)
 
     // viene chiamato qua il dispatcher
