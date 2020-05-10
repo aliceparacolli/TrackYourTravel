@@ -11,16 +11,16 @@ import { Main } from './pages/Main';
 import { Trip } from './pages/Trip';
 import { NotFound } from './pages/NotFound';
 
-//root della pagina web
+//root of the web page
 ReactDOM.render(
   <React.StrictMode>
-    {/* è il contenitore redux definito in store */}
+    {/* it is the redux container defined in store */}
     <Provider store={store}>
       {/* si occupa della navigazione */}
       <BrowserRouter>
         <Switch>
           {/*
-          * si occupa di quale componente renderizzare in base all'URL immesso dall'utente
+          * it takes care of which component to render based on the URL entered by the user
           */}
           <Route exact path="/trip/:tripId" component={Trip}/>
           <Route exact path="/notFound" component={NotFound}/>
