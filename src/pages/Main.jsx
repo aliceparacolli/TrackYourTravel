@@ -20,15 +20,15 @@ function TripInput(){
   const history = useHistory()
 
   function goToTrip(){    
-    // immaginiamo che tripId sia uguale a "3"
-    // allora viene messo sulla cronologia /trip/3
-    // ne consegue che veniamo reinderizzato a quell'URL
+    // Let's imagine thar tripId is "3"
+    // then it is put on the chronology /trip/3
+    // it follows that we are redirected to that URL
     history.push(`/trip/${tripId}`)
   }
 
-  //viene chiamata ogni volta che cambia il valore dentro input
+  //It is used(called) each time that the value changes inside the imput
   function inputChangeHandler(e){
-    // e.target.value è il valore dell'input corrente
+    // e.target.value is the value of the current imput
     setTripId(e.target.value)
   }
 
