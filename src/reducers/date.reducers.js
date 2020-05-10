@@ -10,9 +10,9 @@ const initialState = {
   year: moment().year()
 }
 
-// Reducer che riceve il nuovo valore della data dal dispatcher
-// e aggiorna lo stato facendo re-renderizzare (a carico della libreria redux) tutti i componenti che ne fanno richiesta
-// usando useSelector
+// "Reducer" which receives the new date value from the dispatcher
+// and it updates the status by re-rendering (at the expense of the "redux" library) all the components that request it
+// using "useSelector"
 export function dateReducer(state = initialState, action){
   switch(action.type){
     case dateActions.CHANGE_DATE:
