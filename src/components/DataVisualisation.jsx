@@ -39,14 +39,12 @@ export function DataVisualisation(){
 
 function Statistic(props){
 
-  //useState è una funzione che mi permette di creare uno stato
-  // 1. un componente può contenere più di 1 stato
-  // 2. il nome dello stato e il nome della funzione che mi modifica lo stato è a discrezione del programmatore
-  // per esempio io avrei potuto scrivere:
-  // const [alice,setAlice] = useState()
-  // alice: è il nome della variabile (contentitore) che contiene il mio stato
-  // setAlice: è la funzione che mi permette di modificare lo stato e quindi il contenuto di alice
+  //useState is a funcition that allows me to create a state
+  // 1. a single component can have muliple states
+  // 2. the name of the state and the name of the function that modifies the state, are choosen by me 
   const [stat,setStat] = useState()
+  // stat: is the name of the variable that contains my state
+  // setStat: is the function that allows me to modify the state and Stat's content
 
   const {tripId} = useParams();
 
@@ -68,13 +66,13 @@ function Statistic(props){
       </thead>
       <tbody>
         {
-          //una mappa su tutte le statistiche
-          // nel nostro caso un array di 5 elementi
+          //map function on all te statistics
+          //in this case it is an array of 5 elements
           props.statistic.map(
             // per ogni e contiene:
-            // - name: nome della statistica
-            // - day: valore giornaliero
-            // - tot: valore totale
+            // - name: nome of statistic
+            // - day: daily value
+            // - tot: total value
             e => {
               return <tr key={e.name}>
                 <td>
@@ -84,9 +82,9 @@ function Statistic(props){
                     size="sm"
                     className="w-100"
                     onClick={function(){
-                      //aggiorna lo stato del componente
-                      //mette dentro lo stato che ho chiamato "stat" e.name
-                      //che è uguale al nome della statistica contenuta in e
+                      //It updates the state of the component
+                      //It places inside the state that I named "stat" e.name
+                      //That is the same name of the statistic contained in e
                       setStat(e.name)
                     }}
                   >
